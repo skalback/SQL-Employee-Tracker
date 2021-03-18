@@ -27,10 +27,30 @@ async function startMenu() {
             name: "Add New Employee",
             value: "ADD_EMPLOYEE"
         },
+
         {
-          name: "View All Employees",
-          value: "VIEW_EMPLOYEES"
+            name: "Add New Department",
+            value: "ADD_DEPARTMENT"
         },
+
+        {
+            name: "Add New Role",
+            value: "ADD_ROLE"
+        },
+
+        {
+            name: "View All Employees",
+            value: "VIEW_EMPLOYEES"
+          },
+        {
+            name: "View All Departments",
+            value: "VIEW_DEPARTMENTS"
+          },
+          {
+            name: "View All Roles",
+            value: "VIEW_ROLES"
+          },
+        
         {
           name: "View All Employees By Department",
           value: "VIEW_EMPLOYEES_BY_DEPARTMENT"
@@ -39,10 +59,7 @@ async function startMenu() {
           name: "View All Employees By Manager",
           value: "VIEW_EMPLOYEES_BY_MANAGER"
         },
-        {
-          name: "Remove Employee",
-          value: "REMOVE_EMPLOYEE"
-        },
+        
         {
           name: "Update Employee Role",
           value: "UPDATE_EMPLOYEE_ROLE"
@@ -51,30 +68,23 @@ async function startMenu() {
           name: "Update Employee Manager",
           value: "UPDATE_EMPLOYEE_MANAGER"
         },
+      
+        
+   
+        
         {
-          name: "View All Roles",
-          value: "VIEW_ROLES"
-        },
-        {
-          name: "Add New Role",
-          value: "ADD_ROLE"
-        },
-        {
-          name: "Remove Role",
-          value: "REMOVE_ROLE"
-        },
-        {
-          name: "View All Departments",
-          value: "VIEW_DEPARTMENTS"
-        },
-        {
-          name: "Add New Department",
-          value: "ADD_DEPARTMENT"
-        },
+            name: "Remove Employee",
+            value: "REMOVE_EMPLOYEE"
+          },
+        
         {
           name: "Remove Department",
           value: "REMOVE_DEPARTMENT"
         },
+        {
+            name: "Remove Role",
+            value: "REMOVE_ROLE"
+          },
         {
           name: ">>> EXIT <<<",
           value: "EXIT"
@@ -205,6 +215,7 @@ async function viewEmployeesByDepartment() {
   startMenu();
 }
 
+//display all employees when selecting a manager
 async function viewEmployeesByManager() {
   const managers = await db.listAllEmployees();
 
@@ -237,6 +248,7 @@ async function viewEmployeesByManager() {
   startMenu();
 }
 
+//Deletes employee
 async function removeEmployee() {
   const employees = await db.listAllEmployees();
 
@@ -262,6 +274,7 @@ async function removeEmployee() {
   startMenu();
 }
 
+//Update employee role
 async function updateEmployeeRole() {
   const employees = await db.listAllEmployees();
 
@@ -303,6 +316,7 @@ async function updateEmployeeRole() {
   startMenu();
 }
 
+//Updates employee manager
 async function updateEmployeeManager() {
   const employees = await db.listAllEmployees();
 
@@ -347,6 +361,7 @@ async function updateEmployeeManager() {
   startMenu();
 }
 
+//Display all ROles
 async function viewRoles() {
   const roles = await db.listAllRoles();
 
